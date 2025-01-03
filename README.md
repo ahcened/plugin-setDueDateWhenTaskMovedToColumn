@@ -25,14 +25,12 @@ This Kanboard plugin automatically sets the due date of a task when it is moved 
 2. Add a new action and select **Set Due Date When Task Moved To Column**.
 3. Configure the action:
    - Choose the target column from the dropdown.
-   - Specify the due date (e.g., `+1 day` or `2025-01-15`).
 4. Save the action. The plugin will now automatically set the due date when a task is moved to the configured column.
 
 ## Configuration Parameters
 
 - **Target Column**: The column where the action is triggered (e.g., "Finished").
-- **Due Date**: The date to set as the task's due date. Supports relative dates (e.g., `+2 days`) and absolute dates (e.g., `2025-01-15`).
-
+  
 ## Compatibility
 
 - Requires Kanboard version >= 1.2.0.
