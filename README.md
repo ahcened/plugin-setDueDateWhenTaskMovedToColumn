@@ -10,7 +10,7 @@ This Kanboard plugin automatically sets the due date of a task when it is moved 
 
 ## Installation
 
-1. Clone this repository into the `plugins` directory of your Kanboard installation:
+Clone this repository into the `plugins` directory of your Kanboard installation:
    ```bash
-   git clone https://github.com/yourusername/SetDueDateOnColumnChange plugins/SetDueDateOnColumnChange
+   git clone https://github.com/ahcened/plugin-setDueDateWhenTaskMovedToColumn plugins/SetDueDateOnColumnChange
 
