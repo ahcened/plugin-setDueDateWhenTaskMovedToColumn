@@ -6,7 +6,7 @@ use Kanboard\Model\TaskModel;
 use Kanboard\Action\Base;
 
 /**
- * Set Due Date When Task is Moved to a Specified Column
+ * Set Due Date to Current Time When Task is Moved to a Specified Column
  *
  * @package action
  */
@@ -20,7 +20,7 @@ class SetDueDateWhenMovedToColumn extends Base
      */
     public function getDescription()
     {
-        return t('Set the due date of a task when it is moved to a specified column');
+        return t('Set the due date of a task to the current time when it is moved to a specified column');
     }
 
     /**
@@ -52,10 +52,6 @@ class SetDueDateWhenMovedToColumn extends Base
                 'label' => t('Target column'),
                 'options' => $columns,
             ),
-            'due_date' => array(
-                'type' => 'text',
-                'label' => t('Due date (e.g., +1 day or specific date)'),
-            ),
         );
     }
 
@@ -83,12 +79,12 @@ class SetDueDateWhenMovedToColumn extends Base
     public function doAction(array $data)
     {
         if ($data['column_id'] == $this->getParam('column_id')) {
-            $dueDate = $this->getParam('due_date');
-            $timestamp = strtotime($dueDate);
+            // Set the due date to the current time
+            $currentTime = time(); // Get the current timestamp
 
             return $this->taskModificationModel->update(array(
                 'id'       => $data['task_id'],
-                'date_due' => $timestamp,
+                'date_due' => $currentTime,
             ));
         }
 
@@ -107,4 +103,3 @@ class SetDueDateWhenMovedToColumn extends Base
         return true;
     }
 }
-
